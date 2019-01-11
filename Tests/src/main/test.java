@@ -1,11 +1,11 @@
 package main;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.logging.Logger;
+
 
 public class test {
 public static void main(String[] args) {
-	Logger logger = LoggerFactory.getLogger(test.class);
+	Logger logger = Logger.getLogger(test.class.getName());;
 	logger.info("Hello World!");
 
 }

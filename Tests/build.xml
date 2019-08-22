@@ -3,6 +3,13 @@
 
     <property name = "src.dir" value = "src"/>
    <property name = "bin.dir" value = "bin"/>
+
+   <target name = "execute" depends = "Compile">
+	<echo message="${bin.dir}" />  
+      <java fork = "true" failonerror = "yes" classname = "main.test">
+	  <classpath path = "${bin.dir}" />
+      </java>
+   </target>
    
    <target name = "Compile" description = "Compile source files" depends="clean" >
       <mkdir dir = "${bin.dir}"/>
@@ -11,4 +18,13 @@
          <src path = "${src.dir}"/>
       </javac>
    </target>
+ 
+   <target name = "clean" description = "Clean output directories">
+      <delete>
+         <fileset dir = "${bin.dir}">
+            <include name = "**/*.class"/>
+         </fileset>
+      </delete>
+   </target>
+   
 </project>

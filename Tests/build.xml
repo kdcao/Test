@@ -4,22 +4,17 @@
     <property name = "src.dir" value = "src"/>
    <property name = "bin.dir" value = "bin"/>
 
-
    <target name = "execute" depends = "Compile">
 	<echo message="${bin.dir}" />  
       <java fork = "true" failonerror = "yes" classname = "main.test">
 	  <classpath path = "${bin.dir}" />
- 
-    
       </java>
    </target>
    
    <target name = "Compile" description = "Compile source tree java files" depends="clean" >
       <mkdir dir = "${bin.dir}"/>
-      
       <javac includeantruntime="false" destdir = "${bin.dir}" source = "1.8" target = "1.8">
          <src path = "${src.dir}"/>
-
       </javac>
    </target>
  

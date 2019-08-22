@@ -11,9 +11,10 @@
       </java>
    </target>
    
-   <target name = "Compile" description = "Compile source tree java files" depends="clean" >
+   <target name = "Compile" description = "Compile source files" depends="clean" >
       <mkdir dir = "${bin.dir}"/>
-      <javac includeantruntime="false" destdir = "${bin.dir}" source = "1.8" target = "1.8">
+      <javac includeantruntime="false" 
+	     destdir = "${bin.dir}" source = "1.8" target = "1.8">
          <src path = "${src.dir}"/>
       </javac>
    </target>
